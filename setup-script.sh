@@ -1,4 +1,3 @@
-adduser ninja01
 apt update && apt upgrade
 apt install curl apt-transport-https vim git wget software-properties-common lsb-release ca-certificates -y
 swapoff -a
@@ -16,6 +15,7 @@ echo \
 "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] \
 https://download.docker.com/linux/ubuntu \
 $(lsb_release -cs) stable" | tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo adduser ninja01
 usermod -aG sudo ninja01
 usermod -aG docker ninja01
 apt-get update && apt-get install containerd.io -y
@@ -25,10 +25,11 @@ systemctl restart containerd
 echo 'deb http://apt.kubernetes.io/ kubernetes-xenial main' >/etc/apt/sources.list.d/kubernetes.list
 curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add
 apt-get update
-apt-get install -y kubeadm=1.27.1-00 kubelet=1.27.1-00 kubectl=1.27.1-00
+apt-get install -y kubeadm=1.27.1-00 kubelet=1.27.1-00 kubectl=1.27.1-00 -y
 apt-mark hold kubelet kubeadm kubectl
 kubeadm init --config=kubeadm-config.yaml --upload-certs | tee kubeadm-init.out
 exit
 mkdir -p $HOME/.kube
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
