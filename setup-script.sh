@@ -1,4 +1,4 @@
-apt update && apt upgrade
+apt update && apt upgrade -y
 apt install curl apt-transport-https vim git wget software-properties-common lsb-release ca-certificates -y
 swapoff -a
 modprobe overlay
@@ -15,7 +15,6 @@ echo \
 "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] \
 https://download.docker.com/linux/ubuntu \
 $(lsb_release -cs) stable" | tee /etc/apt/sources.list.d/docker.list > /dev/null
-sudo adduser ninja01
 usermod -aG sudo ninja01
 usermod -aG docker ninja01
 apt-get update && apt-get install containerd.io -y
