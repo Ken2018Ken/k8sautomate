@@ -1,6 +1,6 @@
 echo ".........   PLease wait while we setup K8S Play ground......"
 sleep 20
-
+sudo -i
 apt update && apt upgrade -y
 apt install curl apt-transport-https vim git wget software-properties-common lsb-release ca-certificates -y
 swapoff -a
@@ -34,6 +34,14 @@ exit
 mkdir -p $HOME/.kube
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 sudo chown $(id -u):$(id -g) $HOME/.kube/config
+sleep 10
+echo "                                                            "
+echo "                                                            "  
+echo "               $$$$$$$$  $$$$$$$$$$                         "
+echo "                                                            "
+echo "                                                            "
+echo "____________________________________________________________"
+sleep 5
 echo "$$$$$$$$  Ninja01 k8s Automated Spin up Complete! $$$$$$$$$$"
 echo "                                                            "
 echo "                                                            "  
