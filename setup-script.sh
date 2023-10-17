@@ -1,5 +1,12 @@
+echo "."
+echo "."
+echo "."
+echo "."
 echo ".........   PLease wait while we setup K8S Play ground......"
-sleep 20
+echo "."
+echo "."
+echo "."
+echo "."
 sudo -i
 apt update && apt upgrade -y
 apt install curl apt-transport-https vim git wget software-properties-common lsb-release ca-certificates -y
