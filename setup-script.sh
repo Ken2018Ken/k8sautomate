@@ -7,7 +7,6 @@ echo "."
 echo "."
 echo "."
 echo "."
-sudo -i
 apt update && apt upgrade -y
 apt install curl apt-transport-https vim git wget software-properties-common lsb-release ca-certificates -y
 swapoff -a
