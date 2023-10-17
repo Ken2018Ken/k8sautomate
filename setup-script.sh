@@ -40,14 +40,14 @@ exit
 mkdir -p $HOME/.kube
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 sudo chown $(id -u):$(id -g) $HOME/.kube/config
-sleep 10
+sleep 2
 echo "                                                            "
 echo "                                                            "  
 echo "               $$$$$$$$  $$$$$$$$$$                         "
 echo "                                                            "
 echo "                                                            "
 echo "____________________________________________________________"
-sleep 5
+sleep 2
 echo "$$$$$$$$  Ninja01 k8s Automated Spin up Complete! $$$$$$$$$$"
 echo "                                                            "
 echo "                                                            "  
